@@ -35,8 +35,4 @@ git clone --recurse-submodules <your_git_repository>
 wasm-pack build SmartContract
 ```
 
-*Done!* Now you can write your smart contract in `SmartContract/src/lib.rs` and compile it, run and debug your smart contract in `Tests/lib_test.go`!
-
-### Import how-to's:
-- [Compile](Compile-SmartContract.md) a smart contract
-- [Unit test and debug](UnitTest-and-debug-SmartContract.md) a smart contract
+*Done!* Now you can write your smart contract in `SmartContract/src/lib.rs`, [compile](Compile-SmartContract.md) it, [run and debug]((UnitTest-and-debug-SmartContract.md)) it in `Tests/lib_test.go`!
