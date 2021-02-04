@@ -6,7 +6,7 @@ A simple template used to start developing your own smart contracts for ISCP (IO
 - [Rust](https://www.rust-lang.org/tools/install)
 - [Wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
 - [Go](https://golang.org/dl/)
-- Gcc (or [equivalent (TDM-GCC)](https://jmeubank.github.io/tdm-gcc/) for Windows)
+- Gcc (or equivalent for Windows [(TDM-GCC)](https://jmeubank.github.io/tdm-gcc/))
 
 This is how the prepared file structure looks like:
 ![View of the template on VSCode](VSCode_Rust_Template_View.png)
