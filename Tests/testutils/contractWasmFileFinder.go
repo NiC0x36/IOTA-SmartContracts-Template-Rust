@@ -9,7 +9,7 @@ import (
 
 // MustGetContractWasmFilePath ensures a given smart contract's wasm file exists
 func MustGetContractWasmFilePath(t *testing.T, contractName string) string {
-	contractWasmFilePath := "../pkg/" + contractName + "_bg.wasm"
+	contractWasmFilePath := "../SmartContract/pkg/" + contractName + "_bg.wasm"
 	exists, err := fs.Exists(contractWasmFilePath)
 	require.NoError(t, err, "Error trying to find file: "+contractWasmFilePath)
 	require.True(t, exists, "File does not exist: "+contractWasmFilePath)
