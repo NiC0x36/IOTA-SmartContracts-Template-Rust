@@ -17,7 +17,7 @@
       
       "wasplib" : true,
 
-      "VSCode*.png" : true
+      "*.png" : true
     },
     "go.testFlags": [
       "-v",
