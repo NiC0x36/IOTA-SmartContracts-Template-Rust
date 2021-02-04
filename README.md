@@ -1,4 +1,4 @@
-# IOTA SmartContracts - Template for development in Rust
+## IOTA SmartContracts - Template for development in Rust
 
 A simple template used to start developing your own smart contracts for ISCP (IOTA Smart Contract Protocol) in Rust and write unit tests in Go. 
 
