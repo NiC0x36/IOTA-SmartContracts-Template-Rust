@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	"github.com/user/project/SmartContract/tests/testutils"
+	"github.com/user/project/Tests/testutils"
 
 	"github.com/iotaledger/wasp/packages/solo"
 )
