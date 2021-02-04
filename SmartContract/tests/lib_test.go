@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
+	"github.com/user/project/SmartContract/tests/testutils"
 
 	"github.com/iotaledger/wasp/packages/solo"
 )
@@ -11,7 +12,7 @@ import (
 func TestLib(t *testing.T) {
 	// Contract name - Defined in Cargo.toml > package > name
 	const contractName = "my_iota_sc"
-	contractWasmFilePath := mustGetContractWasmFilePath(t, contractName)
+	contractWasmFilePath := testutils.MustGetContractWasmFilePath(t, contractName)
 
 	// Name of the SC function to be requested - Defined in lib.rs > add_call > my_sc_request
 	functionName := "my_sc_request"

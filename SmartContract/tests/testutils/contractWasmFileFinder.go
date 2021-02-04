@@ -1,4 +1,4 @@
-package libtest
+package testutils
 
 import (
 	"testing"
@@ -7,8 +7,8 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-// Ensure contract folder and wasm file exist before the test
-func mustGetContractWasmFilePath(t *testing.T, contractName string) string {
+// MustGetContractWasmFilePath ensures a given smart contract's wasm file exists
+func MustGetContractWasmFilePath(t *testing.T, contractName string) string {
 	contractWasmFilePath := "../pkg/" + contractName + "_bg.wasm"
 	exists, err := fs.Exists(contractWasmFilePath)
 	require.NoError(t, err)
