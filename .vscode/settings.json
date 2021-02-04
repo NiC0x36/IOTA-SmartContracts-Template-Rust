@@ -1,0 +1,20 @@
+{
+    "files.exclude": {
+      
+      "**/target": true,
+      "**/Cargo.lock": true,
+      
+      "**/pkg/*.js*" : true,
+      "**/pkg/*.ts" : true,
+
+      "**/go.mod": true,
+      "**/go.sum": true,
+
+      "**/.git*" : true,
+            
+      "LICENSE" : true,
+      "README.md" : true,
+      
+      "wasplib" : true
+    }
+  }
