@@ -34,4 +34,4 @@ git clone --recurse-submodules <your_git_repository>
 *Done!* Now you can write your smart contract in `SmartContract/src/lib.rs`, [compile](Compile-SmartContract.md) it, [run and debug](UnitTest-and-debug-SmartContract.md) it in `Tests/lib_test.go`!
 
 ---
-[LICENSE](LICENSE)
+[MIT License](LICENSE)
