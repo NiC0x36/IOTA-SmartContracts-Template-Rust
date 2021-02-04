@@ -8,5 +8,10 @@ A simple template used to start developing your own smart contracts for ISCP (IO
 - [Go](https://golang.org/dl/)
 - Gcc (or equivalent for Windows [(TDM-GCC)](https://jmeubank.github.io/tdm-gcc/))
 
-This is how the prepared file structure looks like:
+#### Why is go required?
+Go is used by [Solo](https://github.com/iotaledger/wasp/tree/develop/packages/solo) to simulate the behavior of Wasp nodes. Unit tests for smart contracts are written in Go so Solo is acessible. The only other option would be to deploy the SCs under development to Wasp nodes, without the chance to test it locally.
+
+#### Simple structure prepared to start with development right away
+This is how the templated file structure looks like:
+
 ![View of the template on VSCode](VSCode_Rust_Template_View.png)
