@@ -12,7 +12,7 @@ This is how the templated file structure looks like:
 ### Requirements
 - [Rust](https://www.rust-lang.org/tools/install)
 - [Wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
-- [Go](https://golang.org/dl/) - [(Why Go)](WhyGo.md)
+- [Go](https://golang.org/dl/) - [Why Go?](WhyGo.md)
 - Gcc (or equivalent for Windows [(TDM-GCC)](https://jmeubank.github.io/tdm-gcc/))
 - [Visual Studio Code](https://code.visualstudio.com/Download) (VSCode)
   - [Rust extension](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust)
