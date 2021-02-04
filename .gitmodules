@@ -1,0 +1,4 @@
+[submodule "wasplib"]
+	path = wasplib
+	url = https://github.com/iotaledger/wasplib.git
+	branch = develop

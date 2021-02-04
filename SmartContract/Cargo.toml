@@ -1,11 +1,11 @@
   
 [package]
+edition = "2018"
 name = "helloworld"
 description = "Basic hello world contract"
 license = "Apache-2.0"
 version = "0.1.0"
 authors = ["Author name <author@email.address>"]
-edition = "2020"
 repository = "https://github.com/user/project"
 
 [lib]
@@ -15,7 +15,7 @@ crate-type = ["cdylib", "rlib"]
 default = ["console_error_panic_hook"]
 
 [dependencies]
-wasplib = { path = "../wasplib" }
+wasplib = { path = "../wasplib/rust/wasplib" }
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
