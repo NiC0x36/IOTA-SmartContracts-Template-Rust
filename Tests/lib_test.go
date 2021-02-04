@@ -25,7 +25,10 @@ func TestLib(t *testing.T) {
 	err := chain.DeployWasmContract(nil, contractName, contractWasmFilePath)
 	require.NoError(t, err)
 
+	// Defines which contract and function will be called by chain.PostRequest
 	req := solo.NewCallParams(contractName, functionName)
+
+	// Calls contract my_iota_sc, function my_sc_request
 	_, err = chain.PostRequest(req, nil)
 	require.NoError(t, err)
 }
