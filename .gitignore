@@ -30,6 +30,3 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
-
-######### General ignores
-*.png # png images in root
