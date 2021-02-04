@@ -12,7 +12,7 @@ A simple template used to start developing your own smart contracts for ISCP (IO
   - [Better TOML](https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml) *Optional nice to have 
   - [Go Extension](https://marketplace.visualstudio.com/items?itemName=golang.Go)
 
-####Compile Smart Contract
+#### Compile Smart Contract
 Clone the repository you have generated from this template with
 ```
 git clone --recurse-submodules <your_repository>
