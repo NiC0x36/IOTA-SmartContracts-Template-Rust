@@ -10,7 +10,7 @@ import (
 )
 
 func TestLib(t *testing.T) {
-	// Contract name - Defined in Cargo.toml > package > name
+	// Contract name - Defined in SmartContract/Cargo.toml > package > name
 	const contractName = "my_iota_sc"
 	contractWasmFilePath := testutils.MustGetContractWasmFilePath(t, contractName)
 
