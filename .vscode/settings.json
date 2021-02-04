@@ -7,7 +7,7 @@
       "**/pkg/*.js*" : true,
       "**/pkg/*.ts" : true,
 
-      "**/go.mod": true,
+      //"go.mod": true,
       "**/go.sum": true,
 
       "**/.git*" : true,
