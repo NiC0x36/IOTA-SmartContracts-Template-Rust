@@ -5,7 +5,7 @@ A simple template used to start developing your own smart contracts for ISCP (IO
 #### Simple structure prepared to start with development right away
 This is how the templated file structure looks like:
 
-![View of the template on VSCode](VSCode_Rust_Template_View.png)
+![View of the template on VSCode](VSCode-TemplateView.png)
 
 ---
 
