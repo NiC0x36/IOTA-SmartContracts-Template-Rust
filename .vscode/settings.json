@@ -13,7 +13,7 @@
       "**/.git*" : true,
             
       "LICENSE" : true,
-      "README.md" : true,
+      "*.md" : true,
       
       "wasplib" : true,
 
