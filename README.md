@@ -7,7 +7,7 @@ A simple template used to start developing your own smart contracts for ISCP (IO
 - [Wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
 - [Go](https://golang.org/dl/)
 - Gcc (or equivalent for Windows [(TDM-GCC)](https://jmeubank.github.io/tdm-gcc/))
-- VSCode
+- [Visual Studio Code](https://code.visualstudio.com/Download) (VSCode)
   - [Rust extension](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust)
   - [Better TOML](https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml) *Optional nice to have 
   - [Go Extension](https://marketplace.visualstudio.com/items?itemName=golang.Go)
