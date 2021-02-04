@@ -14,10 +14,15 @@ A simple template used to start developing your own smart contracts for ISCP (IO
 
 ### Set code up!
 - Use this template repository to create your own.
-- Clone your repository with:
+- Clone your git repository with:
 ```
-git clone --recurse-submodules <your_repository>
+git clone --recurse-submodules <your_git_repository>
 ```
+- Open your git repository on VSCode
+
+### Import how-to's:
+- [Compile](Compile-SmartContract.md) a smart contract
+- [Unit test and debug](UnitTest-and-debug-SmartContract.md) a smart contract
 
 #### Simple structure prepared to start with development right away
 This is how the templated file structure looks like:
