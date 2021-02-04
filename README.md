@@ -32,3 +32,6 @@ git clone --recurse-submodules <your_git_repository>
 - Open file `Tests/lib_test.go` and change the import from `github.com/user/project/Tests/testutils` to `github.com/<your_username>/<your_project_name>/Tests/testutils`
 
 *Done!* Now you can write your smart contract in `SmartContract/src/lib.rs`, [compile](Compile-SmartContract.md) it, [run and debug](UnitTest-and-debug-SmartContract.md) it in `Tests/lib_test.go`!
+
+---
+[LICENSE](LICENSE)
