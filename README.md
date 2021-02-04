@@ -26,6 +26,16 @@ This is how the templated file structure looks like:
 git clone --recurse-submodules <your_git_repository>
 ```
 - Open your git repository on VSCode
+- For Windows *only*, open file ".vscode/settings.json" and uncomment the setting "go.testFlags" entry "-buildmode=exe":
+![Go.testFlags for Windows](go-testflags.png)
+- Open file `go.mod` and change the go module's name from `module github.com/user/project` to `module github.com/<your_username>/<your_project_name>`
+- Open file `Tests/lib_test.go` and change the import from `github.com/user/project/Tests/testutils` to `github.com/<your_username>/<your_project_name>/Tests/testutils`
+- Compile the sample smart contract in `SmartContract/src/lib.rs` on the terminal with:
+```
+wasm-pack build SmartContract
+```
+
+*Done!* Now you can write your smart contract in `SmartContract/src/lib.rs` and compile it, run and debug your smart contract in `Tests/lib_test.go`!
 
 ### Import how-to's:
 - [Compile](Compile-SmartContract.md) a smart contract
