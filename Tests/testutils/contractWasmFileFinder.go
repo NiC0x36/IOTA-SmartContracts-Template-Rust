@@ -11,8 +11,8 @@ import (
 func MustGetContractWasmFilePath(t *testing.T, contractName string) string {
 	contractWasmFilePath := "../pkg/" + contractName + "_bg.wasm"
 	exists, err := fs.Exists(contractWasmFilePath)
-	require.NoError(t, err)
-	require.True(t, exists)
+	require.NoError(t, err, "Error trying to find file: "+contractWasmFilePath)
+	require.True(t, exists, "File does not exist: "+contractWasmFilePath)
 
 	return contractWasmFilePath
 }
