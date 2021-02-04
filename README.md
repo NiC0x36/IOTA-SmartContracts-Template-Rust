@@ -2,6 +2,13 @@
 
 A simple template used to start developing your own smart contracts for ISCP (IOTA Smart Contract Protocol) in Rust and write unit tests in Go. 
 
+#### Simple structure prepared to start with development right away
+This is how the templated file structure looks like:
+
+![View of the template on VSCode](VSCode_Rust_Template_View.png)
+
+---
+
 ### Requirements
 - [Rust](https://www.rust-lang.org/tools/install)
 - [Wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
@@ -23,8 +30,3 @@ git clone --recurse-submodules <your_git_repository>
 ### Import how-to's:
 - [Compile](Compile-SmartContract.md) a smart contract
 - [Unit test and debug](UnitTest-and-debug-SmartContract.md) a smart contract
-
-#### Simple structure prepared to start with development right away
-This is how the templated file structure looks like:
-
-![View of the template on VSCode](VSCode_Rust_Template_View.png)
