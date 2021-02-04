@@ -12,8 +12,11 @@ A simple template used to start developing your own smart contracts for ISCP (IO
   - [Better TOML](https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml) *Optional nice to have 
   - [Go Extension](https://marketplace.visualstudio.com/items?itemName=golang.Go)
 
-#### Why is Go required?
-Go is used by [Solo](https://github.com/iotaledger/wasp/tree/develop/packages/solo) to simulate the behavior of Wasp nodes. Unit tests for smart contracts are written in Go so Solo is acessible. The only other option would be to deploy the SCs under development to Wasp nodes, without the chance to test it locally.
+####Compile Smart Contract
+Clone the repository you have generated from this template with
+```
+git clone --recurse-submodules <your_repository>
+```
 
 #### Simple structure prepared to start with development right away
 This is how the templated file structure looks like:
