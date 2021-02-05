@@ -2,12 +2,16 @@ package libtest
 
 import (
 	"testing"
-
+	// TODO set this back to "github.com/user/project/Tests/testutils"
+	"github.com/brunoamancio/IOTA-SmartContracts-Template-Rust/Tests/testutils"
 	"github.com/stretchr/testify/require"
-	"github.com/user/project/Tests/testutils"
 
 	"github.com/iotaledger/wasp/packages/solo"
 )
+
+//  -----------------------------------------------  //
+//  See code samples in Tests/testutils/codesamples  //
+//  -----------------------------------------------  //
 
 func TestLib(t *testing.T) {
 	// Contract name - Defined in SmartContract/Cargo.toml > package > name
