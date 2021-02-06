@@ -3,8 +3,8 @@ package libtest
 import (
 	"testing"
 
+	"github.com/brunoamancio/IOTA-SmartContracts-Template-Rust/Tests/testutils"
 	"github.com/stretchr/testify/require"
-	"github.com/user/project/Tests/testutils"
 
 	"github.com/iotaledger/wasp/packages/solo"
 )
