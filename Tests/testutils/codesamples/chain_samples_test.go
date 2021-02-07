@@ -3,83 +3,52 @@ package codesamples
 import (
 	"testing"
 
+	"github.com/iotaledger/goshimmer/dapps/valuetransfers/packages/balance"
+	"github.com/iotaledger/wasp/packages/coretypes"
 	"github.com/iotaledger/wasp/packages/solo"
+	"github.com/iotaledger/wasp/packages/testutil"
 	"github.com/stretchr/testify/require"
 )
 
-func Test_CreateChain(t *testing.T) {
+func Test_CreateChain_chainCreatorSpecified(t *testing.T) {
 	env := solo.New(t, false, false)
 
-	chainName := "myChain"
-	chain := env.NewChain(nil, chainName)
+	// Create address with dummy tokens in it.
+	const initialWalletFunds = testutil.RequestFundsAmount
+	chainOriginatorsWalletKeyPair := env.NewSignatureSchemeWithFunds()
+	require.NotNil(t, chainOriginatorsWalletKeyPair)
+	// Chain originators must have at least 1 iota token to create a chain
+	require.GreaterOrEqual(t, initialWalletFunds, 1)
 
+	// Wallet addresses
+	chainOriginatorsWalletAddress := chainOriginatorsWalletKeyPair.Address()
+	require.NotNil(t, chainOriginatorsWalletAddress)
+
+	// Wallet balance in value tangle
+	env.AssertAddressBalance(chainOriginatorsWalletAddress, balance.ColorIOTA, initialWalletFunds)
+
+	// Create a chain where chainCreatorsWalletKeyPair is the owner.
+	chain := env.NewChain(chainOriginatorsWalletKeyPair, "myChain")
 	require.NotNil(t, chain)
-	require.Equal(t, chainName, chain.Name)
+	require.NotEqual(t, chain.ChainColor, balance.ColorIOTA)
+
+	// AgentID of the wallet (also, chain.OriginatorAgentID)
+	chainOriginatorsAgentID := coretypes.NewAgentIDFromAddress(chainOriginatorsWalletAddress)
+
+	// IMPORTANT: When a chain is created, 1 IOTA is sent from the originator's account in the value tangle their account in the chain
+	chain.AssertAccountBalance(chainOriginatorsAgentID, balance.ColorIOTA, 1)
 }
 
-func Test_DeploySmartContractIntoChain(t *testing.T) {
+// Sample of how to create chain without specifying a chainOriginator.
+// A dummy chain originator is created in the background (by NewChain).
+func Test_CreateChain_NoChainCreatorSpecified(t *testing.T) {
 	env := solo.New(t, false, false)
-	const chainName = "myChain"
-	chain := env.NewChain(nil, chainName)
 
-	// Uploads wasm of SC and deploys it into chain
-	const contractName = "myContract"
-	const contractWasmFilePath = "<file path to contract.wasm>"
-	err := chain.DeployWasmContract(nil, contractName, contractWasmFilePath)
-	require.NoError(t, err)
+	// Create a chain where chainCreatorsWalletKeyPair is the owner.
+	chain := env.NewChain(nil, "myChain")
+	require.NotNil(t, chain)
+	require.NotEqual(t, chain.ChainColor, balance.ColorIOTA)
 
-	contract, err := chain.FindContract(contractName)
-	require.NoError(t, err)
-	require.NotNil(t, contract)
-	require.Equal(t, contractName, contract.Name)
-}
-
-func Test_CallSmartContract_PostRequest(t *testing.T) {
-	env := solo.New(t, false, false)
-	const chainName = "myChain"
-	chain := env.NewChain(nil, chainName)
-
-	// Uploads wasm of SC and deploys it into chain
-	const contractName = "myContract"
-	const contractWasmFilePath = "<file path to contract.wasm>"
-	err := chain.DeployWasmContract(nil, contractName, contractWasmFilePath)
-	require.NoError(t, err)
-
-	contract, err := chain.FindContract(contractName)
-	require.NoError(t, err)
-	require.NotNil(t, contract)
-	require.Equal(t, contractName, contract.Name)
-
-	// Defines which contract and function will be called by chain.PostRequest
-	const functionName = "my_sc_request"
-	req := solo.NewCallParams(contractName, functionName)
-
-	// Calls contract my_iota_sc, function my_sc_request
-	_, err = chain.PostRequest(req, nil)
-	require.NoError(t, err)
-}
-
-func Test_CallSmartContract_CallView(t *testing.T) {
-	env := solo.New(t, false, false)
-	const chainName = "myChain"
-	chain := env.NewChain(nil, chainName)
-
-	// Uploads wasm of SC and deploys it into chain
-	const contractName = "myContract"
-	const contractWasmFilePath = "<file path to contract.wasm>"
-	err := chain.DeployWasmContract(nil, contractName, contractWasmFilePath)
-	require.NoError(t, err)
-
-	contract, err := chain.FindContract(contractName)
-	require.NoError(t, err)
-	require.NotNil(t, contract)
-	require.Equal(t, contractName, contract.Name)
-
-	// Defines which contract and function will be called by chain.PostRequest
-	const functionName = "my_sc_view"
-
-	// Calls contract my_iota_sc, function my_sc_view
-	result, err := chain.CallView(contractName, functionName)
-	require.NoError(t, err)
-	require.NotNil(t, result)
+	// IMPORTANT: When a chain is created, 1 IOTA is sent from the originator's account in the value tangle their account in the chain
+	chain.AssertAccountBalance(chain.OriginatorAgentID, balance.ColorIOTA, 1)
 }

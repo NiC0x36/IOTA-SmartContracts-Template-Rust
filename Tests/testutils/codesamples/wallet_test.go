@@ -23,11 +23,6 @@ func Test_GenerateWalletWithDummyFunds(t *testing.T) {
 	require.NotNil(t, walletAddress)
 
 	// Wallet balance
-	iotaBalance := env.GetAddressBalance(walletAddress, balance.ColorIOTA)
 	require.NotNil(t, walletAddress)
-
 	env.AssertAddressBalance(walletAddress, balance.ColorIOTA, testutil.RequestFundsAmount)
-
-	t.Logf("Wallet address: %s", walletAddress)
-	t.Logf("Wallet balance: %d IOTA(s)", iotaBalance)
 }
