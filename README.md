@@ -30,8 +30,8 @@ git clone --recurse-submodules <your_git_repository>
 - Open your git repository on VSCode
 - For Windows *only*, open file ".vscode/settings.json" and uncomment the setting "go.testFlags" entry "-buildmode=exe":
 ![Go.testFlags for Windows](go-testflags.png)
-- Open file `go.mod` and change the go module's name from `module github.com/user/project` to `module github.com/<your_username>/<your_project_name>`
-- Open file `Tests/lib_test.go` and change the import from `github.com/user/project/Tests/testutils` to `github.com/<your_username>/<your_project_name>/Tests/testutils`
+- Open file `go.mod` and change the go module's name from `module github.com/brunoamancio/IOTA-SmartContracts-Template-Rust` to `module github.com/<your_username>/<your_project_name>`
+- Open file `Tests/lib_test.go` and change the import from `github.com/brunoamancio/IOTA-SmartContracts-Template-Rust/Tests/testutils` to `github.com/<your_username>/<your_project_name>/Tests/testutils`
 
 *Done!* Now you can write your smart contract in `SmartContract/src/lib.rs`, [compile](Compile-SmartContract.md) it, [run and debug](UnitTest-and-debug-SmartContract.md) it in `Tests/lib_test.go`!
 
