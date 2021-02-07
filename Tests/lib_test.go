@@ -2,7 +2,7 @@ package libtest
 
 import (
 	"testing"
-	// TODO set this back to "github.com/user/project/Tests/testutils"
+
 	"github.com/brunoamancio/IOTA-SmartContracts-Template-Rust/Tests/testutils"
 	"github.com/stretchr/testify/require"
 
